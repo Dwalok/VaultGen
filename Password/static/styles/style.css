@@ -1,0 +1,232 @@
+:Root{
+    --color-header: #EAEAEA;
+    --color-box: #e0e0e0;
+    --color-highlight: #FF2E63;
+    --color-body: #252A34;
+    --color-highlight2: #08D9D6;
+
+}
+
+/* Styles de base */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: var(--color-body);
+}
+
+header {
+    background-color: var(--color-header);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; /* Permet de passer à la ligne sur petits écrans */
+}
+
+.logo {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.highlight {
+    color: var(--color-highlight);
+}
+.highlightgen {
+    color: var(--color-highlight2);
+}
+
+.password-container {
+    background-color: var(--color-box);
+    padding: 20px;
+    margin: 20px auto;
+    width: 30%;
+    border-radius: 8px;
+    box-sizing: border-box; /* Évite le débordement des bordures */
+}
+
+input {
+    width: 100%; /* Utilisation complète de la largeur disponible */
+    max-width: 60%; /* Limite la largeur */
+    padding: 10px;
+    font-size: 16px;
+    margin: 10px 0;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    box-sizing: border-box; /* Prend en compte les bordures dans la largeur */
+}
+
+button {
+    padding: 10px 20px;
+    background-color: var(--color-highlight);
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.criteria {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne sur petits écrans */
+    margin-top: 20px;
+}
+
+.criteria p {
+    font-size: 14px;
+    margin: 5px; /* Ajoute un espace entre les critères */
+}
+
+h3 {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+#strength {
+    font-weight: bold;
+    color: green;
+}
+#passwordAlert{
+    display:none;
+    margin-top: 20px;
+    color: var(--color-highlight);
+}
+
+/* Media Queries pour la responsivité */
+
+/* Petits écrans (tablettes et mobiles) */
+@media (max-width: 768px) {
+    .password-container {
+        width: 80%; /* Réduit la largeur pour s'adapter aux petits écrans */
+        padding: 15px;
+    }
+
+    input {
+        max-width: 100%; /* Utilise toute la largeur disponible */
+    }
+
+    .criteria {
+        flex-direction: column; /* Affiche les critères en colonne */
+        align-items: flex-start; /* Aligne les textes à gauche */
+    }
+
+    .criteria p {
+        font-size: 16px; /* Augmente légèrement la taille du texte pour les petits écrans */
+        margin: 10px 0;
+    }
+}
+
+/* Très petits écrans (mobiles étroits) */
+@media (max-width: 480px) {
+    header {
+        flex-direction: column; /* Affiche le logo et le titre en colonne */
+        text-align: center;
+    }
+
+    .logo {
+        margin: 0 auto 10px; /* Centre le logo et ajoute un espace en bas */
+    }
+
+    button {
+        width: 100%; /* Le bouton occupe toute la largeur disponible */
+        font-size: 14px;
+    }
+
+    .password-container {
+        width: 90%; /* Réduit encore la largeur */
+    }
+
+    h3 {
+        font-size: 16px; /* Réduit légèrement la taille du texte */
+    }
+}
+
+/* Section Générateur de Mot de Passe */
+.password-generator {
+    background-color: var(--color-box);
+    padding: 20px;
+    margin: 20px auto;
+    width: 30%;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.generator-options {
+    display: flex;
+    justify-content: center; /* Centre les champs de longueur */
+    align-items: center;
+    gap: 10px; /* Espace entre "Longueur" et l'input */
+    margin-bottom: 20px; /* Espace entre le champ et les cases à cocher */
+}
+
+.checkbox-group {
+    display: flex; /* Aligne les options horizontalement */
+    gap: 20px; /* Espacement entre chaque case */
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Permet de passer à la ligne sur petits écrans */
+}
+
+.checkbox-group label {
+    display: flex; /* Aligne la case à cocher avec son texte */
+    align-items: center;
+    gap: 5px; /* Espace entre la case et le texte */
+    white-space: nowrap; /* Empêche les retours à la ligne */
+    cursor: pointer; /* Curseur en forme de main */
+}
+
+#boutongen {
+    margin-top: 20px; /* Espace entre les options et le bouton */
+    padding: 10px 20px;
+    background-color: var(--color-highlight2);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Media Queries pour rendre la section Générateur responsive */
+
+/* Petits écrans (tablettes et mobiles) */
+@media (max-width: 768px) {
+    .password-generator {
+        width: 80%; /* Adapte la largeur aux petits écrans */
+        padding: 15px;
+    }
+
+    .generator-options {
+        flex-direction: column; /* Affiche les éléments en colonne */
+        align-items: center; /* Centre les éléments */
+        gap: 15px; /* Espace accru pour les petits écrans */
+    }
+
+    .checkbox-group {
+        flex-direction: column; /* Affiche les options en colonne */
+        gap: 10px; /* Moins d'espace entre les options */
+    }
+
+    button {
+        width: 100%; /* Le bouton occupe toute la largeur disponible */
+        font-size: 14px;
+    }
+}
+
+/* Très petits écrans (mobiles étroits) */
+@media (max-width: 480px) {
+    .password-generator {
+        width: 90%; /* Réduit encore la largeur */
+        padding: 10px;
+    }
+
+    .checkbox-group {
+        align-items: flex-start; /* Aligne les options à gauche */
+    }
+
+    #boutongen {
+        width: 100%; /* Largeur maximale pour le bouton */
+        font-size: 14px; /* Taille de texte adaptée */
+    }
+}
