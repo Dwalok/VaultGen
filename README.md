@@ -25,5 +25,7 @@ PasswordGen est une application intuitive pour :
 
 👉 *Contribuez, testez ou intégrez PasswordGen dans vos projets !*
 
---- 
+## 👏 Acknowledgment
+
+A big thank you to BrandonW6000 for his GitHub repository, Common-Credentials, which provides a comprehensive list of commonly used passwords. This valuable resource greatly contributed to enhancing this project's password strength evaluation.
 
